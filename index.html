@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale= 1" />
+    <!--Optimiser pour mobiles-->
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" rel="stylesheet" />
+
+    <title>Compte-rendu - So_Pekocko</title>
+</head>
+
+<body>
+    <header>
+        <div class="titre">
+            <h1>Compte-rendu : So_Pekocko</h1>
+            <img src="images/logo.jpeg" alt="logo" />
+        </div>
+        <div class="sommaire">
+            <h2>Sommaire</h2>
+            <ul>
+                <li><i class="fa fa-minus" aria-hidden="true"></i>
+                    <a href="#som-structure">Structure du Backend</a></li>
+                <li><i class="fa fa-minus" aria-hidden="true"></i>
+                    <a href="#som-sauces">Tout sur les sauces</a></li>
+                <li><i class="fa fa-minus" aria-hidden="true"></i>
+                    <a href="#som-authentification">Tout sur l'authentification</a></li>
+                <li><i class="fa fa-minus" aria-hidden="true"></i>
+                    <a href="#som-middle">Les middlewares</a></li>
+                <li><i class="fa fa-minus" aria-hidden="true"></i>
+                   <a href="#som-depen">Les dépendances</a></li>
+                <li><i class="fa fa-minus" aria-hidden="true"></i>
+                   <a href="#som-secu">La sécurité</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="structure">
+        <h3 id="som-structure">La structure</h3>
+        <div class="explication-structure">
+            <img src="images/structure.jpg" alt="structure" />
+            <ul>
+                <li>
+                    Dossier controllers : Il contient la logique métier de nos routes.
+                </li>
+                <li>
+                    Dossier images : Il contient les images enregistrées par les utilisateurs du site.
+                </li>
+                <li>
+                    Dossier middleware : Un middleware est un logiciel qui fournit aux applications des fonctionnalités
+                    et des services communs.
+                </li>
+                <li>
+                    Dossier models : On va retrouver les modèles utilisés par l'application.
+                </li>
+                <li>
+                    Dossier routes : Il contient la logique de nos routes.
+                </li>
+                <li>
+                    Fichier .env : Il contient les données sensibles.
+                </li>
+                <li>
+                    Fichier.gitignore : Il contient les fichiers à ignorer. Ici node_modules et aussi .env.
+                </li>
+                <li>
+                    Fichier app.js : C'est le fichier de démarrage du projet. Il contient tout le projet.
+                </li>
+                <li>
+                    Fichier server.js : Il contient notre serveur Node. Node est un runtime qui nous sert pour écrire
+                    toutes nos tâches coté serveur en JavaScript.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="sauces">
+        <h3 id="som-sauces">Tout sur les sauces</h3>
+        <div class="models-sauce">
+            <img src="images/models-sauce.jpg" alt="modele de sauce" />
+            <p>Mongoose est le package qui facilite les intéractions avec notre base de données MongoDB grâce à diverses
+                fonctionnalités.
+                Ici mongoose.Schema() pour définir le schéma d'une sauce. Et mongoose.exports va nous permettre
+                d'exporter le schéma en tant que modèle le rendant de ce fait disponible pour notre application Express.
+            </p>
+        </div>
+        <div class="controllers-sauce">
+            <img src="images/controllers-sauce.jpg" alt="controllers de sauce" />
+            <div class="explications-ctrl">On importe notre modèle de sauce.
+                Toutes nos routes sont créées dans ce fichier.
+                On retrouve : <ul class="list-ctrl-sauce">
+                    <li>
+                        getOne pour récupérer une sauce selon l'ID.
+                    </li>
+                    <li>
+                        getAll pour récupérer toutes les sauces.
+                    </li>
+                    <li>
+                        create pour la création d'une sauce.
+                    </li>
+                    <li>
+                        modify pour modifier une sauce existante.
+                    </li>
+                    <li>
+                        delete pour supprimer une sauce existante.
+                    </li>
+                    <li>
+                        like pour liker ou disliker une sauce.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="routes-sauce">
+            <img src="images/routes-sauce.jpg" alt="routes de sauce" />
+            <p>Express est un framework reposant sur Node qui facilite ma création et la gestion des serveurs Node.</br>
+                On importe les routes de notre dossier controllers pour définir notre routeur. Faire cela facilite la
+                compréhension de notre
+                fichier de routeur. Il est évident quelles routes sont disponibles à quels points de terminaison, et les
+                noms descriptifs
+                donnés aux fonctions de notre contrôleur permettent de mieux comprendre la fonction de chaque route.
+            </p>
+        </div>
+    </section>
+
+    <section class="authentification">
+        <h3 id="som-authentification">Tout sur l'authentification</h3>
+        <div class="models-authentification">
+            <img src="images/models-authentification.jpg" alt="modele de authentification" />
+            <p>
+                On reprends le même principe que pour le modèle de sauce mais cette fois pour l'authentification.
+            </p>
+        </div>
+        <div class="controllers-authentification">
+            <img src="images/controllers-authentification.jpg" alt="controllers d'authentification" />
+            <div class="explications-authentification">On importe notre modèle d'authentification.
+                Nos routes pour s'identifier et s'inscrire sont créées dans ce fichier.
+                On retrouve : <ul class="list-authentification-sauce">
+                    <li>
+                        signup pour s'inscrire sur le site.</br>
+                        On a tout d'abord crypto-js qui nous permet de crypter l'adresse e-mail pour ne pas apparaître
+                        en brut.</br>
+                        On a aussi le hash, bcrypt, qui nous permet de "saler" 10 fois le mot de passe.</br>
+                        Les deux nous permettent de garantir la sécurité des données.
+                    </li>
+                    <li>
+                        login pour récupérer toutes les sauces.</br>
+                        On vérifie d'abord que l'adresse mail rentrée correspond à une adresse mail existant dans la
+                        base de données.</br>
+                        Puis on utilise la fonction compare de bcrypt pour vérifier que le mot de passe entré correspond
+                        à celui de la base de données.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="routes-authentification">
+            <img src="images/routes-authentification.jpg" alt="routes d'authentification" />
+            <p>
+                On importe les routes à nouveau de notre dossier controllers pour définir notre routeur.
+            </p>
+        </div>
+    </section>
+
+    <section class="middleware">
+        <h3 id="som-middle">Les middlewares</h3>
+        <div class="middle">
+            <img src="images/auth.jpg" alt="middleware authentification" />
+            <p>
+                Ce middleware va nous permettre de protéger les routes sélectionnées et
+                nous permettre aussi de vérifier que l'utilisateur est authentifié avant d'autoriser l'envoi de ses
+                requêtes.
+            </p>
+        </div>
+        <div class="middle">
+            <img src="images/multer.jpg" alt="middleware authentification" />
+            <p>
+                Ce package nous permet de gérer les fichiers entrants dans les requêtes HTTP.</br>
+                Ici, il va nous permettre de gérer les images. On va les stocker dans notre dossier image en changeant
+                son nom et son extension.<br>
+                Il sera ajouter aux routes POST, PUT et DELETE.
+            </p>
+        </div>
+    </section>
+
+    <section class="dependances">
+        <h3 id="som-depen">Les dépendances</h3>
+        <div class="dependances-list">
+            <img src="images/secu1.jpg" alt="sécurité" />
+            <div class="explication-dependances">
+                Différentes choses ont été mise en place grâce au gestionnaire de paquets officiel de node.js(npm) :
+                <ul>
+                    <li>
+                        bcrypt : nous l'avons vu précédemment. Il permet de hasher les mots de passe.
+                    </li>
+                    <li>
+                        body-parser : il analyse les corps de requête entrants dans un middleware avant nos
+                        gestionnaires.
+                    </li>
+                    <li>
+                        crypto-js : nous l'avons vu précédemment. Il permet de crypter l'adresse mail.
+                    </li>
+                    <li>
+                        dotenv : il permet de sécuriser des données sensibles.
+                    </li>
+                    <li>
+                        express-mongo-sanitize : il nettoie les données fournies par l'utilisateur.
+                    </li>
+                    <li>
+                        express-rate-limit : il limite les demandes répétées.
+                    </li>
+                    <li>
+                        helmet : il sécurise l'application Express en définissant divers en-têtes HTTP.
+                    </li>
+                    <li>
+                        jsonwebtoken : il permet l'échange sécurisé de jetons entre plusieurs parties.
+                    </li>
+                    <li>
+                        mongo-sanitize : il permet aussi de nettoyer les entrées fournies par l'utilisateur.
+                    </li>
+                    <li>
+                        mongoose-unique-valisator : il ajoute une validation de pré-sauvegarde pour les champs unique
+                        dans un schéma Mongoose.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="securite">
+        <h3 id="som-secu">La sécurité</h3>
+        <ul>
+            <li class="secuetdiv">
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                <div>
+                    npm audit : faire cela va nous permettre d'analyser le projet à la recherche de vulnérabilités.
+                    <img src="images/audit.jpg" alt="audit" />
+                </div>
+            </li>
+            <li>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                bcrypt : permet le hashage du mot de passe comme vu précédemment.
+            </li>
+            <li>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                crypto-js : permet de crypter l'adresse mail comme vu précédemment.
+            </li>
+            <li class="secuetdiv">
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                <div>
+                    helmet : il nous permet de sécuriser l'en-tête HTTP.
+                    <img src="images/helmet.jpg" alt="helmet" />
+                </div>
+            </li>
+            <li>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                jsonwebtoken : au moment de se connecter, les utilisateurs recevront leur token et le renverront
+                automatiquement à chaque requête par la suite.
+                Cela permettra au back-end de vérifier que la requête est authentifiée.
+            </li>
+            <li>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                express-mongo-sanitize : Les données entrées par l'utilisateur est nettoyées pour limiter les risques de
+                sécurité liés à l'injection.
+            </li>
+            <li class="secuetdiv">
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                <div>
+                    express-rate-limit : Il nous permet d'intervenir contre la force brute en limitant, ici à 5
+                    tentatives, le nombre d'essaie de connexion.
+                    <img src="images/limit.jpg" alt="limit" />
+                </div>
+            </li>
+            <li>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                middleware auth : Il nous permet de contrer les attaques automatisées.
+            </li>
+        </ul>
+    </section>
+</body>
+
+</html>

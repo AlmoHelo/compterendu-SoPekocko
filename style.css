@@ -1,0 +1,132 @@
+.titre{
+    background-color: #FEEEDF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sommaire{
+    width: 400px;
+    margin: auto;
+    font-size: 25px;
+}
+.sommaire li{
+    list-style-type: none;
+}
+.sommaire a {
+    text-decoration: none;
+    color: black;
+}
+h3{
+    font-size: 25px;
+    padding-left: 30px;
+}
+.structure, .middleware, .sauces, .authentification, .dependances, .securite{
+    border-top: 1px solid grey;
+    margin-top: 100px;
+}
+.explication-structure{
+    display: flex;
+    justify-content: center;
+}
+.explication-structure li{
+    line-height: 65px;
+}
+.middle{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.middle p{
+    margin-left: 40px;
+    width: 300px;
+}
+.models-sauce{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.models-sauce p{
+    margin-left: 40px;
+    width: 300px;
+}
+.controllers-sauce{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.explications-ctrl{
+    margin-top: 100px;
+    margin-left: 40px;
+    width: 300px;
+}
+.list-ctrl-sauce{    
+    line-height: 40px;
+}
+.routes-sauce{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.routes-sauce p{
+    margin-left: 40px;
+    width: 300px;
+}
+.models-authentification{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.models-authentification p{
+    margin-left: 40px;
+    width: 300px;
+}
+.controllers-authentification{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.explications-authentification{
+    margin-top: 100px;
+    margin-left: 40px;
+    width: 300px;
+}
+.list-authentification-sauce{    
+    line-height: 40px;
+}
+.routes-authentification{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.routes-authentification p{
+    margin-left: 40px;
+    width: 300px;
+}
+.dependances-list{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.explication-dependances {
+    margin-left: 40px;
+    width: 400px;
+}
+.securite ul{
+    width: 60%;
+    margin: auto;
+}
+.securite li{
+    list-style-type: none;
+    margin-top: 20px;
+}
+.securite div img{
+    width: 600px;
+}
+.securite div{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+}
+.secuetdiv{
+    display: flex;
+}
