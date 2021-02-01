@@ -31,15 +31,6 @@ h3{
 .explication-structure li{
     line-height: 65px;
 }
-.middle{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-.middle p{
-    margin-left: 40px;
-    width: 300px;
-}
 .models-sauce{
     display: flex;
     justify-content: center;
@@ -55,7 +46,6 @@ h3{
     margin-bottom: 30px;
 }
 .explications-ctrl{
-    margin-top: 100px;
     margin-left: 40px;
     width: 300px;
 }
@@ -86,7 +76,6 @@ h3{
     margin-bottom: 30px;
 }
 .explications-authentification{
-    margin-top: 100px;
     margin-left: 40px;
     width: 300px;
 }
@@ -99,6 +88,15 @@ h3{
     margin-bottom: 30px;
 }
 .routes-authentification p{
+    margin-left: 40px;
+    width: 300px;
+}
+.middle{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.middle p{
     margin-left: 40px;
     width: 300px;
 }
@@ -129,4 +127,48 @@ h3{
 }
 .secuetdiv{
     display: flex;
+}
+@media screen and (max-width: 768px) {
+    .titre, .sommaire{
+        font-size: 20px;
+        width: 100%;
+    }
+    .explication-structure img{
+        height: 500px;
+        width: 50%;
+    }
+    .explication-structure li{
+        line-height: 15px;
+    }
+    .models-sauce p, .explications-ctrl, .routes-sauce p, .models-authentification p,
+    .explications-authentification, .routes-authentification p, .middle p,
+    .explication-dependances{
+        width: 80%;
+    }
+    .models-sauce, .controllers-sauce, .routes-sauce, .models-authentification, .controllers-authentification, .routes-authentification,
+    .middle, 
+    .dependances-list{
+        flex-direction: column;
+    }
+    .explication-dependances, .securite, .securite div img{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .explication-structure li{
+        line-height: 30px;
+    }
+    .models-sauce, .controllers-sauce, .routes-sauce, .models-authentification, .controllers-authentification, .routes-authentification,
+    .middle, 
+    .dependances-list{
+        flex-direction: column;
+    }
+    .models-sauce p, .explications-ctrl, .routes-sauce p, .models-authentification p,
+    .explications-authentification, .routes-authentification p, .middle p,
+    .explication-dependances{
+        width: 80%;
+    }
+    .explication-dependances, .securite, .securite div img{
+        width: 100%;
+    }
 }
